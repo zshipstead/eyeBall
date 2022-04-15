@@ -27,8 +27,8 @@ eyeScatter <- function(eData, y) {
   # Main Loop
   if (is.numeric(eData[[y]])) {
     while (i != -1){
-      if (is.numeric(eData[,i])){
-        print(plot(eData[[y]] ~ eData[,i],
+      if (is.numeric(eData[[i]])){
+        print(plot(eData[[y]] ~ eData[[i]],
                    xlab = colnames(eData[i]),
                    ylab = colnames(eData[y])))
         moveOptions()
