@@ -77,6 +77,14 @@ keepNumeric <- function(eData){
   eData
 }
 
+# Shapiro Check verify number of observations between 3 and 5000, return result
+shapiroCheck <- function(eData){
+  result <- NULL
+  if (length(which(!is.na(eData))) >= 3 && length(which(!is.na(eData))) <= 5000) {
+    result <- format(round(shapiro.test(eData)$p.value, 4), nsmall = 4)
+  } else result <- "S-W test requires between 3 and 5000 observations"
+  result
+}
 
 
 transformY <- function(eData, y){
